@@ -1,7 +1,5 @@
 .mainContainer {
   flex: 1;
-  background: var(--color-secondary);
-  min-height: 100vh;
   color: #fff;
 }
 
@@ -12,74 +10,30 @@
   gap: 17px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.pageTitle {
-  font-weight: 600;
-  color: #fff;
-  font-size: 18px;
-  font-family: "poppins", sans-serif;
-  padding: 20px 10px;
-}
-
-.searchBox {
-  width: 291px;
-  height: 40px;
-  background: #3a3d4c;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 33px;
-  padding: 8px 27px;
-  border-radius: 20px;
-  ::placeholder {
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "poppins", sans-serif;
-  }
-}
-
-.searchBox input {
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #fff;
-  font-size: 14px;
-}
-
-.searchIcon {
-  color: #9ca3af;
-  font-size: 14px;
-}
-
 /* Cards */
 .cardsRow {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  height: 148px;
 }
 
 .bigCard {
-  width: 100%;
-  max-width: 820px;
-  background: #fff;
-  color: #111;
-  border-radius: 12px;
-  padding: 20px 28px;
-}
-
-.card {
   flex: 1;
   background: #fff;
   color: #111;
   border-radius: 12px;
-  padding: 22px 30px;
+  padding: 20px 28px;
+  height: 148px;
+}
+
+.card {
+  width: 100%;
+  max-width: 316px;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  padding: 11px 18px;
+  height: 148px;
 }
 
 .cardTitle {
@@ -87,12 +41,14 @@
   font-weight: 500;
   margin-bottom: 18px;
   color: #111;
+  font-family: "roboto", sans-serif;
 }
 
 .metrics {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -109,6 +65,19 @@
   gap: 32px;
 }
 
+.innerSummery {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  max-width: 113px;
+}
+
+.summeryTitle {
+  margin-bottom: 11px;
+}
+
 .metricValue {
   font-size: 16px;
   font-weight: 600;
@@ -118,6 +87,7 @@
 .metricLabel {
   font-size: 14px;
   color: #555;
+  text-align: center;
 }
 
 .chartContainer {
@@ -127,8 +97,7 @@
 }
 
 .chartCard {
-  width: 100%;
-  max-width: 820px;
+  flex: 1;
   background: #fff;
   border-radius: 12px;
   padding: 16px;
@@ -172,7 +141,8 @@
 
 /* Top Products Card */
 .productsCard {
-  flex: 1;
+  width: 100%;
+  max-width: 316px;
   background: #f9fafb;
   border-radius: 12px;
   padding: 16px;
@@ -210,4 +180,39 @@
   height: 8px;
   background: #facc15;
   border-radius: 50%;
+}
+
+@media (max-width: 1279px) {
+  .container {
+    padding: 0px 15px;
+  }
+
+  .productsCard {
+    max-width: 290px;
+  }
+
+  .card {
+    max-width: 290px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bigCard {
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    padding-bottom: 64px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainContainer {
+    margin-top: 100px;
+  }
 }

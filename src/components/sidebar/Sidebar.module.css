@@ -3,14 +3,13 @@
   height: 100vh;
   background: var(--color-primary);
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-  padding: 13.5px 13px;
-}
-
-hr {
-  background-color: #424457;
+  padding: 13px;
+  height: 56px;
 }
 
 .logoIcon {
@@ -82,4 +81,20 @@ hr {
   color: #d1d5db;
   font-family: "poppins", sans-serif;
   cursor: pointer;
+}
+
+.iconSize {
+  width: 14px;
+  height: 14px;
+}
+
+.appIconSize {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
 }

@@ -53,19 +53,6 @@ const topProducts = [
 const Home = () => {
   return (
     <div className={styles.mainContainer}>
-      {/* Header */}
-      <header className={styles.header}>
-        <h2 className={styles.pageTitle}>Home</h2>
-        <div className={styles.searchBox}>
-          <div style={{ marginRight: "1px" }}>
-            <SearchIcon />
-          </div>
-          <input type="text" placeholder="Search here..." />
-        </div>
-      </header>
-
-      <hr style={{ marginBottom: "11px" }} />
-
       {/* Main Content */}
       <div className={styles.container}>
         <div className={styles.cardsRow}>
@@ -108,12 +95,14 @@ const Home = () => {
           </div>
 
           {/* Inventory Summary */}
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>Inventory Summary</h3>
+          <div className={`${styles.card} ${styles.hidden}`}>
+            <h3 className={`${styles.cardTitle} ${styles.summeryTitle}`}>
+              Inventory Summary
+            </h3>
             <div className={styles.metrics}>
               <div className={styles.metric}>
                 <QuantityInHand />
-                <div className={styles.innerMatric}>
+                <div className={styles.innerSummery}>
                   <p className={styles.metricValue}>868</p>
                   <span className={styles.metricLabel}>Quantity in Hand</span>
                 </div>
@@ -121,7 +110,7 @@ const Home = () => {
 
               <div className={styles.metric}>
                 <TobeReceived />
-                <div className={styles.innerMatric}>
+                <div className={styles.innerSummery}>
                   <p className={styles.metricValue}>200</p>
                   <span className={styles.metricLabel}>To be received</span>
                 </div>
@@ -130,8 +119,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={styles.cardsRow}>
-          {/* Sales Overview */}
+        <div className={`${styles.cardsRow} ${styles.hidden}`}>
+          {/* product Overview */}
           <div className={styles.bigCard}>
             <h3 className={styles.cardTitle}>Purchase Overview</h3>
             <div className={styles.metrics}>
@@ -169,13 +158,15 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Inventory Summary */}
-          <div className={styles.card}>
-            <h3 className={styles.cardTitle}>Product Summary</h3>
+          {/* Product Summary */}
+          <div className={`${styles.card} ${styles.hidden}`}>
+            <h3 className={`${styles.cardTitle} ${styles.summeryTitle}`}>
+              Product Summary
+            </h3>
             <div className={styles.metrics}>
               <div className={styles.metric}>
                 <SupplierIcon />
-                <div>
+                <div className={styles.innerSummery}>
                   <p className={styles.metricValue}>31</p>
                   <span className={styles.metricLabel}>
                     Number of Suppliers
@@ -185,7 +176,7 @@ const Home = () => {
 
               <div className={styles.metric}>
                 <CatagoriesIcon />
-                <div>
+                <div className={styles.innerSummery}>
                   <p className={styles.metricValue}>21</p>
                   <span className={styles.metricLabel}>
                     Number of Catagories
@@ -220,7 +211,7 @@ const Home = () => {
             </ResponsiveContainer>
           </div>
 
-          <div className={styles.productsCard}>
+          <div className={`${styles.productsCard} ${styles.hidden}`}>
             <h3>Top Products</h3>
             <ul className={styles.productsList}>
               {topProducts.map((product, index) => (
