@@ -7,6 +7,7 @@ import {
   SatisticsIcon,
   SettingIcon,
 } from "../../assets/Icons";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -20,30 +21,30 @@ const Sidebar = () => {
 
       {/* Navigation Menu */}
       <nav className={styles.navMenu}>
-        <a href="#" className={styles.navItem}>
+        <Link to="/dashboard" className={styles.navItem}>
           <HomeIcon className={styles.iconSize} />
           <span>Home</span>
-        </a>
+        </Link>
 
-        <a href="#" className={styles.navItem}>
+        <Link to="/dashboard/product" className={styles.navItem}>
           <ProductIcon className={styles.iconSize} />
           <span>Product</span>
-        </a>
+        </Link>
 
-        <a href="#" className={styles.navItem}>
+        <Link to="/dashboard/invoice" className={styles.navItem}>
           <InvoiceIcon className={styles.iconSize} />
           <span>Invoice</span>
-        </a>
+        </Link>
 
-        <a href="#" className={styles.navItem}>
+        <Link to="/dashboard/statistics" className={styles.navItem}>
           <SatisticsIcon className={styles.iconSize} />
           <span>Statistics</span>
-        </a>
+        </Link>
 
-        <a href="#" className={styles.navItem}>
+        <Link to="/dashboard/setting" className={styles.navItem}>
           <SettingIcon className={styles.iconSize} />
           <span>Setting</span>
-        </a>
+        </Link>
       </nav>
 
       {/* Profile Section */}

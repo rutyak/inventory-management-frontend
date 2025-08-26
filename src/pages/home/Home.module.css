@@ -40,8 +40,8 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 18px;
-  color: #111;
-  font-family: "roboto", sans-serif;
+  color: #383E49;
+  font-family: "Inter", sans-serif;
 }
 
 .metrics {
@@ -94,6 +94,12 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.topProduct {
+  width: 100%;
+  max-width: 316px;
+  height: 600px;
 }
 
 @media (max-width: 1279px) {

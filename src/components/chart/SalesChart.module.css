@@ -18,7 +18,8 @@
 .header h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #2d2f31;
+  font-family: "Inter", sans-serif;
+  color: #383E49;
 }
 
 .btn {

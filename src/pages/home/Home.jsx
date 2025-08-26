@@ -192,7 +192,9 @@ const Home = () => {
         {/* chart */}
         <div className={styles.chartContainer}>
           <SalesChart />
-          <TopProducts />
+          <div className={`${styles.hidden} ${styles.topProduct}`}>
+            <TopProducts />
+          </div>
         </div>
       </div>
     </div>
