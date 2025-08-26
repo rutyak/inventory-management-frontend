@@ -29,6 +29,8 @@ import {
   SupplierIcon,
   TobeReceived,
 } from "../../assets/Icons";
+import SalesChart from "../../components/chart/SalesChart";
+import TopProducts from "../../components/topProducts/TopProducts";
 
 const data = [
   { month: "Jan", Purchase: 48000, Sales: 42000 },
@@ -189,45 +191,8 @@ const Home = () => {
 
         {/* chart */}
         <div className={styles.chartContainer}>
-          <div className={styles.chartCard}>
-            <div className={styles.ChartHeader}>
-              <h3>Sales & Purchase</h3>
-              <button className={styles.button}>Weekly</button>
-            </div>
-
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart
-                data={data}
-                margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Purchase" fill="#4f8df5" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="Sales" fill="#2ecc71" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-
-          <div className={`${styles.productsCard} ${styles.hidden}`}>
-            <h3>Top Products</h3>
-            <ul className={styles.productsList}>
-              {topProducts.map((product, index) => (
-                <li key={index} className={styles.productItem}>
-                  <span className={styles.productName}>{product.name}</span>
-                  <span className={styles.dots}>
-                    {Array(product.rating)
-                      .fill("•")
-                      .map((dot, i) => (
-                        <span key={i} className={styles.dot}></span>
-                      ))}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <SalesChart />
+          <TopProducts />
         </div>
       </div>
     </div>
