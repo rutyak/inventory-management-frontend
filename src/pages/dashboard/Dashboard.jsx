@@ -34,7 +34,7 @@ const Dashboard = () => {
               <SettingIcon className={styles.iconSize} />
             ) : (
               <div className={styles.searchBox}>
-                <div style={{ marginRight: "1px" }}>
+                <div style={{ marginRight: "15px" }}>
                   <SearchIcon />
                 </div>
                 <input type="text" placeholder="Search here..." />

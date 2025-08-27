@@ -39,7 +39,6 @@
 .main {
   flex: 1;
   background: #ecf0f1;
-  overflow-y: auto;
   height: 100vh;
   position: relative;
 }
@@ -88,7 +87,7 @@
     color: white;
     font-size: 16px;
     font-weight: 500;
-    font-family: "poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -117,7 +116,6 @@
 
 .commonStyles {
   padding-top: 11px;
-  padding-bottom: 30px;
   margin-top: 56px;
   background-color: var(--color-secondary);
   height: calc(100% - 56px);
@@ -138,8 +136,8 @@
   }
 
   .commonStyles {
-    margin-top: 0px;
-    height: 100%;
+    margin-top: 109px; 
+    height: calc(100% - 109px);
     overflow-y: auto;
   }
 }

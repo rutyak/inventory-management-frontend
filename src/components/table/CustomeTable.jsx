@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import styles from "./CustomeTable.module.css";
+import { Iicon } from "../../assets/Icons";
 
-const CustomeTable = ({ products, rowsPerPage = 10 }) => {
+const CustomeTable = ({
+  products,
+  rowsPerPage = 10,
+  title = "Products",
+  addBtnLabel = "Add Product",
+  onAdd = () => {},
+  columns = [],
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(products.length / rowsPerPage);
@@ -13,46 +21,58 @@ const CustomeTable = ({ products, rowsPerPage = 10 }) => {
 
   return (
     <div className={styles.card}>
+      {/* ✅ Dynamic Header */}
       <div className={styles.header}>
-        <h3 className={styles.title}>Products</h3>
-        <button className={styles.addBtn}>Add Product</button>
+        <h3 className={styles.title}>{title}</h3>
+        <button className={styles.addBtn} onClick={onAdd}>
+          {addBtnLabel}
+        </button>
       </div>
 
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Products</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Threshold Value</th>
-            <th>Expiry Date</th>
-            <th>Availability</th>
+            {columns.map((col, index) => (
+              <th
+                key={index}
+                className={col.hiddenBelow ? styles.hideOnSmall : ""}
+              >
+                {col.header}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {currentData.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td>{item.quantity}</td>
-              <td>{item.threshold}</td>
-              <td>{item.expiry}</td>
-              <td
-                className={`${styles.status} ${
-                  item.availability === "In-stock"
-                    ? styles.inStock
-                    : item.availability === "Out of stock"
-                    ? styles.outOfStock
-                    : styles.lowStock
-                }`}
-              >
-                {item.availability}
-              </td>
+          {currentData.map((item, rowIndex) => (
+            <tr key={rowIndex}>
+              {columns.map((col, colIndex) => (
+                <td
+                  key={colIndex}
+                  className={
+                    `${col.hiddenBelow ? styles.hideOnSmall : ""} ` +
+                    (col.key === "availability"
+                      ? `${styles.status} ${
+                          item[col.key] === "In-stock"
+                            ? styles.inStock
+                            : item[col.key] === "Out of stock"
+                            ? styles.outOfStock
+                            : styles.lowStock
+                        }`
+                      : "")
+                  }
+                >
+                  <div className={styles.iIconContainer}>
+                    <div>{item[col.key]}</div>
+                    <div className={styles.iIcon}>{col.Iicon ? <Iicon /> : ""}</div>
+                  </div>
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
       </table>
 
+      {/* Pagination Footer */}
       <div className={styles.footer}>
         <button
           onClick={handlePrev}

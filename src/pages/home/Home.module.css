@@ -1,6 +1,7 @@
 .mainContainer {
   flex: 1;
   color: #fff;
+  padding-bottom: 17px;
 }
 
 .container {
@@ -40,7 +41,7 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 18px;
-  color: #383E49;
+  color: #292929;
   font-family: "Inter", sans-serif;
 }
 
@@ -123,12 +124,9 @@
 
   .container {
     flex-direction: column-reverse;
-    padding-bottom: 64px;
   }
-}
 
-@media (max-width: 1024px) {
   .mainContainer {
-    margin-top: 100px;
+    padding-bottom: 93px;
   }
 }

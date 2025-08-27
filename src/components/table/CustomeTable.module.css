@@ -1,7 +1,7 @@
 .card {
   background: #fff;
   border-radius: 8px;
-  padding-top: 20px;
+  padding-top: 15px;
   padding-bottom: 16px;
   color: #111;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -17,7 +17,7 @@
 .title {
   font-size: 18px;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #383e49;
   padding-left: 25px;
 }
@@ -34,6 +34,7 @@
   height: 40px;
   margin-right: 10px;
   font-family: "Inter", sans-serif;
+  position: static;
 }
 
 .table {
@@ -58,12 +59,12 @@
   background-color: #b6b9cf;
   color: black;
   text-align: left;
-  padding-left: 63px;
+  padding-left: 70px;
 }
 
 .table td {
   padding: 10px;
-  padding-left: 63px;
+  padding-left: 70px;
   font-size: 14px;
   border-bottom: 1px solid #f0f0f0;
   font-family: "Inter", sans-serif;
@@ -115,4 +116,51 @@
 .pageCoute {
   color: #48505e;
   font-size: 14px;
+}
+
+.iIcon {
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .table th,
+  .table td {
+    padding-left: 55px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .card {
+    position: relative;
+  }
+
+  .hideOnSmall {
+    display: none;
+  }
+
+  .table th,
+  .table td {
+    padding-left: 45px;
+  }
+
+  .iIconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .iIcon {
+    display: block;
+    height: 16px;
+    padding-right: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .addBtn {
+    position: fixed;
+    bottom: 125px;
+    right: 35px;
+    z-index: 10;
+  }
 }

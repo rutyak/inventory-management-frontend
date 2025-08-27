@@ -11,8 +11,8 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 16px;
-  color: #383E49;
-  font-family: "Inter", sans-serif;
+  color: #383e49;
+  font-family: "Roboto", sans-serif;
 }
 
 .metrics {
@@ -70,10 +70,24 @@
 
 @media (max-width: 768px) {
   .metrics {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
   .divider {
     display: none;
+  }
+
+  .card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .metric {
+    width: 135px !important;
+  }
+
+  .metrics {
+    gap: 10px;
   }
 }

@@ -8,8 +8,13 @@ const OverallPage = ({ title, metrics }) => {
       <div className={styles.metrics}>
         {metrics.map((metric, index) => (
           <React.Fragment key={index}>
-            <div className={styles.metric}>
-              <span className={styles.label} style={{  width: metric.label === "Categories"? "108px": "195px"}}>{metric.label}</span>
+            <div
+              className={styles.metric}
+              style={{
+                width: metric.label === "Categories" ? "108px" : "195px",
+              }}
+            >
+              <span className={styles.label}>{metric.label}</span>
               <div className={styles.matricValue}>
                 <p className={styles.value}>{metric.value}</p>
                 {metric.subValue && (

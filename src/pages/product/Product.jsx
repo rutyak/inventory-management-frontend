@@ -12,7 +12,13 @@ const Product = () => {
       subLabel: "Last 7 days",
       subLabel1: "Revenue",
     },
-    { value: "5", label: "Top Selling", subValue: "₹2500", subLabel: "Last 7 days", subLabel1: "Cost" },
+    {
+      value: "5",
+      label: "Top Selling",
+      subValue: "₹2500",
+      subLabel: "Last 7 days",
+      subLabel1: "Cost",
+    },
     {
       value: "12",
       label: "Low Stocks",
@@ -97,10 +103,27 @@ const Product = () => {
     },
   ];
 
+  // ✅ define columns here
+  const columns = [
+    { header: "Products", key: "name" },
+    { header: "Price", key: "price", hiddenBelow: 1280 },
+    { header: "Quantity", key: "quantity", hiddenBelow: 1280 },
+    { header: "Threshold Value", key: "threshold", hiddenBelow: 1280 },
+    { header: "Expiry Date", key: "expiry", hiddenBelow: 1280 },
+    { header: "Availability", key: "availability", Iicon: true },
+  ];
+
   return (
     <div className={styles.container}>
       <OverallPage title="Overall Inventory" metrics={metricsData} />
-      <CustomeTable products={productsData} rowsPerPage={10} />;
+      <CustomeTable
+        products={productsData}
+        rowsPerPage={10}
+        title="Inventory Table"
+        addBtnLabel="Add Product"
+        onAdd={() => alert("Add Product Clicked!")}
+        columns={columns}
+      />
     </div>
   );
 };
