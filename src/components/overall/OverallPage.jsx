@@ -11,7 +11,7 @@ const OverallPage = ({ title, metrics }) => {
             <div
               className={styles.metric}
               style={{
-                width: metric.label === "Categories" ? "108px" : "195px",
+                width: (metric.label === "Categories" || metric.label === "Recent Transactions")? "140px" : "195px",
               }}
             >
               <span className={styles.label}>{metric.label}</span>

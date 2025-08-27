@@ -6,6 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Home from "./pages/home/Home.jsx";
 import Product from "./pages/product/Product.jsx";
+import Invoice from "./pages/invoice/Invoice.jsx";
+import Statistics from "./pages/statistics/Statistics.jsx";
+import Settings from "./pages/setting/Settings.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +27,23 @@ const router = createBrowserRouter([
         path: "product",
         element: <Product />,
       },
+      {
+        path: "invoice",
+        element: <Invoice />,
+      },
+      {
+        path: "statistics",
+        element: <Statistics />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+      },
     ],
+  },
+  {
+    path: "/settings",
+    element: <Settings />,
   },
 ]);
 

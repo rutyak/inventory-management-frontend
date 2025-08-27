@@ -1,6 +1,6 @@
 .card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 20px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
   border: 2px solid #e5e7eb;
@@ -38,4 +38,11 @@
 
 .btn:hover {
   background: #f9fafb;
+}
+
+@media (max-width: 450px){
+  .card{
+    height: 369px;
+    padding: 10px;
+  }
 }

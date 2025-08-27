@@ -103,7 +103,6 @@ const Product = () => {
     },
   ];
 
-  // ✅ define columns here
   const columns = [
     { header: "Products", key: "name" },
     { header: "Price", key: "price", hiddenBelow: 1280 },
@@ -119,7 +118,7 @@ const Product = () => {
       <CustomeTable
         products={productsData}
         rowsPerPage={10}
-        title="Inventory Table"
+        title="Products"
         addBtnLabel="Add Product"
         onAdd={() => alert("Add Product Clicked!")}
         columns={columns}

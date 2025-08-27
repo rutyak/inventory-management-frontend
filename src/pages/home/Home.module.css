@@ -22,7 +22,7 @@
   flex: 1;
   background: #fff;
   color: #111;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 20px 28px;
   height: 148px;
 }
@@ -32,7 +32,7 @@
   max-width: 316px;
   background: #fff;
   color: #111;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 11px 18px;
   height: 148px;
 }

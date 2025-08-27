@@ -1,6 +1,6 @@
 .card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   padding-top: 15px;
   padding-bottom: 16px;
   color: #111;
@@ -46,7 +46,7 @@
 .table td {
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #9b9999;
+  border: 1px solid #d0d3d9;
   height: 50px;
 }
 
@@ -54,7 +54,7 @@
   font-size: 16px;
   font-weight: 500;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d0d3d9;
   font-family: "Inter", sans-serif;
   background-color: #b6b9cf;
   color: black;
@@ -66,7 +66,7 @@
   padding: 10px;
   padding-left: 70px;
   font-size: 14px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #d0d3d9;
   font-family: "Inter", sans-serif;
   color: #48505e;
   font-weight: 500;
@@ -122,6 +122,16 @@
   display: none;
 }
 
+.hideOnLarge {
+  display: none;
+}
+
+.iIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media (max-width: 1300px) {
   .table th,
   .table td {
@@ -136,6 +146,10 @@
 
   .hideOnSmall {
     display: none;
+  }
+
+  .hideOnLarge {
+    display: block;
   }
 
   .table th,
@@ -164,3 +178,4 @@
     z-index: 10;
   }
 }
+

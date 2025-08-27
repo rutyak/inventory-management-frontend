@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CustomeTable.module.css";
-import { Iicon } from "../../assets/Icons";
+import { Iicon, ThreeDots } from "../../assets/Icons";
 
 const CustomeTable = ({
   products,
@@ -24,9 +24,11 @@ const CustomeTable = ({
       {/* ✅ Dynamic Header */}
       <div className={styles.header}>
         <h3 className={styles.title}>{title}</h3>
-        <button className={styles.addBtn} onClick={onAdd}>
-          {addBtnLabel}
-        </button>
+        {!(title === "Invoices List") && (
+          <button className={styles.addBtn} onClick={onAdd}>
+            {addBtnLabel}
+          </button>
+        )}
       </div>
 
       <table className={styles.table}>
@@ -35,7 +37,13 @@ const CustomeTable = ({
             {columns.map((col, index) => (
               <th
                 key={index}
-                className={col.hiddenBelow ? styles.hideOnSmall : ""}
+                className={
+                  col.hiddenBelow
+                    ? styles.hideOnSmall
+                    : col.hiddenAbove
+                    ? styles.hideOnLarge
+                    : ""
+                }
               >
                 {col.header}
               </th>
@@ -45,28 +53,44 @@ const CustomeTable = ({
         <tbody>
           {currentData.map((item, rowIndex) => (
             <tr key={rowIndex}>
-              {columns.map((col, colIndex) => (
-                <td
-                  key={colIndex}
-                  className={
-                    `${col.hiddenBelow ? styles.hideOnSmall : ""} ` +
-                    (col.key === "availability"
-                      ? `${styles.status} ${
-                          item[col.key] === "In-stock"
-                            ? styles.inStock
-                            : item[col.key] === "Out of stock"
-                            ? styles.outOfStock
-                            : styles.lowStock
-                        }`
-                      : "")
-                  }
-                >
-                  <div className={styles.iIconContainer}>
-                    <div>{item[col.key]}</div>
-                    <div className={styles.iIcon}>{col.Iicon ? <Iicon /> : ""}</div>
-                  </div>
-                </td>
-              ))}
+              {columns.map((col, colIndex) => {
+                const cellContent = col.render
+                  ? col.render(item)
+                  : item[col.key];
+
+                return (
+                  <td
+                    key={colIndex}
+                    className={
+                      `${col.hiddenBelow ? styles.hideOnSmall : ""} ` +
+                      `${col.hiddenAbove ? styles.hideOnLarge : ""} ` +
+                      (col.key === "availability"
+                        ? `${styles.status} ${
+                            item[col.key] === "In-stock"
+                              ? styles.inStock
+                              : item[col.key] === "Out of stock"
+                              ? styles.outOfStock
+                              : styles.lowStock
+                          }`
+                        : "")
+                    }
+                  >
+                    <div className={styles.iIconContainer}>
+                      <div>{cellContent}</div>
+                      {col.Iicon && (
+                        <div className={styles.iIcon}>
+                          <Iicon />
+                        </div>
+                      )}
+                      {col.threeDot && (
+                        <div className={styles.threeDot}>
+                          <ThreeDots />
+                        </div>
+                      )}
+                    </div>
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>

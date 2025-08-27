@@ -34,7 +34,7 @@ const SalesChart = () => {
         </button>
       </div>
 
-      <ResponsiveContainer width="100%" height={486}>
+      <ResponsiveContainer width="100%" height="89%">
         <BarChart data={data} barSize={16}>
           <CartesianGrid vertical={false} stroke="#f0f0f0" />
           <XAxis dataKey="name" />

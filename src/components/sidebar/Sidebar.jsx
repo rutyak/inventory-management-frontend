@@ -41,9 +41,9 @@ const Sidebar = () => {
           <span>Statistics</span>
         </Link>
 
-        <Link to="/dashboard/setting" className={styles.navItem}>
+        <Link to="/dashboard/settings" className={styles.navItem}>
           <SettingIcon className={styles.iconSize} />
-          <span>Setting</span>
+          <span>Settings</span>
         </Link>
       </nav>
 

@@ -136,8 +136,15 @@
   }
 
   .commonStyles {
-    margin-top: 109px; 
+    margin-top: 109px;
     height: calc(100% - 109px);
     overflow-y: auto;
+  }
+
+  .settingPage {
+    padding-top: 0px;
+    margin-top: 0px;
+    background-color: var(--color-secondary);
+    height: 100%;
   }
 }

@@ -519,11 +519,10 @@ export const Iicon = () => (
   </svg>
 );
 
-export const CloseIcon = () => (
+export const CloseIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="12"
-    height="14"
+    className={className}
     viewBox="0 0 12 14"
     fill="none"
   >
@@ -575,3 +574,136 @@ export const DeleteIcon = () => (
     />
   </svg>
 );
+
+export const ThreeDots = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="4"
+    height="18"
+    viewBox="0 0 4 18"
+    fill="none"
+  >
+    <path
+      d="M0.5 0H3.5V3H0.5V0ZM0.5 7.5H3.5V10.5H0.5V7.5ZM0.5 15H3.5V18H0.5V15Z"
+      fill="#48505E"
+    />
+  </svg>
+);
+
+export const RupeeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+  >
+    <g opacity="0.5">
+      <path
+        d="M10.9209 5.2642L10.5728 6.49219H4.05509L4.4031 5.2642H10.9209ZM7.74898 13L4.18932 8.67969L4.17938 7.71023H5.94429C6.38511 7.71023 6.75798 7.64228 7.0629 7.50639C7.36782 7.3705 7.59983 7.1733 7.75892 6.91477C7.91801 6.65294 7.99756 6.33475 7.99756 5.96023C7.99756 5.40341 7.83184 4.96094 7.5004 4.63281C7.16896 4.30469 6.65026 4.14062 5.94429 4.14062H4.05509L4.41801 2.81818H5.94429C6.76626 2.81818 7.44405 2.9491 7.97767 3.21094C8.51129 3.47277 8.90902 3.8357 9.17085 4.29972C9.43269 4.76373 9.56361 5.29901 9.56361 5.90554C9.56361 6.44579 9.45589 6.93466 9.24046 7.37216C9.02502 7.80966 8.68198 8.16596 8.21134 8.44105C7.74069 8.71615 7.12256 8.87689 6.35693 8.9233L6.31219 8.93324L9.56361 12.9155V13H7.74898ZM10.9258 2.81818L10.5728 4.05611L5.36262 4.02628L5.7156 2.81818H10.9258Z"
+        fill="black"
+      />
+    </g>
+  </svg>
+);
+
+export const SoldIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+  >
+    <g opacity="0.5">
+      <path
+        d="M13.3333 3.3335H2.66659C1.93021 3.3335 1.33325 3.93045 1.33325 4.66683V11.3335C1.33325 12.0699 1.93021 12.6668 2.66659 12.6668H13.3333C14.0696 12.6668 14.6666 12.0699 14.6666 11.3335V4.66683C14.6666 3.93045 14.0696 3.3335 13.3333 3.3335Z"
+        stroke="#020617"
+        stroke-width="1.33"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1.33325 6.6665H14.6666"
+        stroke="#020617"
+        stroke-width="1.33"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+);
+
+export const StockIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+  >
+    <g opacity="0.5">
+      <path
+        d="M14.6666 8H11.9999L9.99992 14L5.99992 2L3.99992 8H1.33325"
+        stroke="#020617"
+        stroke-width="1.33"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+  </svg>
+);
+
+export const ArrowDownIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="23"
+    height="23"
+    viewBox="0 0 23 23"
+    fill="none"
+  >
+    <g clip-path="url(#clip0_187_5601)">
+      <path
+        d="M7.0089 8.04486L11.3093 12.3359L15.6097 8.04486L16.9307 9.36589L11.3093 14.9873L5.68787 9.36589L7.0089 8.04486Z"
+        fill="#666666"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_187_5601">
+        <rect
+          width="22.4857"
+          height="22.4857"
+          fill="white"
+          transform="matrix(1 0 0 -1 0.0664062 22.4824)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const ArrowUpIcon = () => {
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="23"
+    height="23"
+    viewBox="0 0 23 23"
+    fill="none"
+  >
+    <g clip-path="url(#clip0_187_5601)">
+      <path
+        d="M7.0089 8.04486L11.3093 12.3359L15.6097 8.04486L16.9307 9.36589L11.3093 14.9873L5.68787 9.36589L7.0089 8.04486Z"
+        fill="#666666"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_187_5601">
+        <rect
+          width="22.4857"
+          height="22.4857"
+          fill="white"
+          transform="matrix(1 0 0 -1 0.0664062 22.4824)"
+        />
+      </clipPath>
+    </defs>
+  </svg>;
+};
