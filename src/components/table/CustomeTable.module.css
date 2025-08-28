@@ -17,7 +17,6 @@
 .title {
   font-size: 18px;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
   color: #383e49;
   padding-left: 25px;
 }
@@ -33,7 +32,6 @@
   width: 116px;
   height: 40px;
   margin-right: 10px;
-  font-family: "Inter", sans-serif;
   position: static;
 }
 
@@ -55,7 +53,6 @@
   font-weight: 500;
   padding: 10px;
   border-bottom: 1px solid #d0d3d9;
-  font-family: "Inter", sans-serif;
   background-color: #b6b9cf;
   color: black;
   text-align: left;
@@ -67,7 +64,6 @@
   padding-left: 70px;
   font-size: 14px;
   border-bottom: 1px solid #d0d3d9;
-  font-family: "Inter", sans-serif;
   color: #48505e;
   font-weight: 500;
 }

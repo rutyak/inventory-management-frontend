@@ -6,14 +6,17 @@ import BottomNav from "../../components/bottomNav/BottomNav";
 import { SearchIcon, SettingIcon } from "../../assets/Icons";
 import { AppIcon } from "../../assets/images";
 import Settings from "../setting/Settings";
+import ProductModal from "../../components/productModal/ProductModal";
 
 const Dashboard = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 1024);
-    handleResize(); // run on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -56,10 +59,20 @@ const Dashboard = () => {
 
         {/* Main Content */}
         <div
-          className={(isSettingsPage && isMobile) ? styles.settingPage : styles.commonStyles}
+          className={
+            isSettingsPage && isMobile
+              ? styles.settingPage
+              : styles.commonStyles
+          }
         >
-          {isMobile && isSettingsPage ? <Settings /> : <Outlet />}
+          {isMobile && isSettingsPage ? (
+            <Settings />
+          ) : (
+            <Outlet context={{ setIsOpen }} />
+          )}
         </div>
+
+        <ProductModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
       </main>
 
       {isMobile && <BottomNav />}

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import OverallPage from "../../components/overall/OverallPage";
 import CustomeTable from "../../components/table/CustomeTable";
 import styles from "./Product.module.css";
+import { useOutletContext } from "react-router-dom";
 
 const Product = () => {
   const metricsData = [
@@ -112,6 +114,12 @@ const Product = () => {
     { header: "Availability", key: "availability", Iicon: true },
   ];
 
+  const { setIsOpen } = useOutletContext();
+  
+  function handleAddProducts() {
+    setIsOpen(true);
+  }
+
   return (
     <div className={styles.container}>
       <OverallPage title="Overall Inventory" metrics={metricsData} />
@@ -120,7 +128,7 @@ const Product = () => {
         rowsPerPage={10}
         title="Products"
         addBtnLabel="Add Product"
-        onAdd={() => alert("Add Product Clicked!")}
+        onAdd={handleAddProducts}
         columns={columns}
       />
     </div>
