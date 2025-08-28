@@ -122,6 +122,11 @@
   overflow-y: auto;
 }
 
+.divider {
+  border: 1px solid white;
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   .header {
     padding: 0px 30px;

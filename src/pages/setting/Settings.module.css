@@ -202,10 +202,7 @@
 }
 
 .closeSetting {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  padding-right: 10px;
+  display: none;
 }
 
 @media (max-width: 1024px) {
@@ -215,7 +212,7 @@
 
   .card {
     border-radius: 0px;
-    height: 675px;
+    height: 710px;
     padding: 38px;
   }
 
@@ -234,13 +231,20 @@
 
   .tabs {
     margin-bottom: 28px;
-    gap: 16px
+    gap: 16px;
   }
 
   .closeIcon {
     width: 17px;
     height: 20px;
     padding-bottom: 2px;
+  }
+
+  .closeSetting {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 10px;
   }
 }
 

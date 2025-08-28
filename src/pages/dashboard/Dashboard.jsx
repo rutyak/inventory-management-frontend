@@ -22,13 +22,11 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboard}>
-      {/* Sidebar (hidden on small devices if needed) */}
       {!isMobile && <Sidebar />}
 
       {/* Main Content */}
       <main className={styles.main}>
-        {/* Header */}
-        {!isSettingsPage && (
+        {(!isMobile || !isSettingsPage) && (
           <header className={styles.header}>
             <div className={styles.innerHeader}>
               {isMobile ? (
@@ -58,13 +56,12 @@ const Dashboard = () => {
 
         {/* Main Content */}
         <div
-          className={isSettingsPage ? styles.settingPage : styles.commonStyles}
+          className={(isSettingsPage && isMobile) ? styles.settingPage : styles.commonStyles}
         >
           {isMobile && isSettingsPage ? <Settings /> : <Outlet />}
         </div>
       </main>
 
-      {/* Bottom navigation (mobile only) */}
       {isMobile && <BottomNav />}
     </div>
   );
