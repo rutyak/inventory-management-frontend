@@ -8,4 +8,14 @@
   .container {
     padding-bottom: 93px;
   }
+
+  .eyeIcon{
+    width: 25px;
+    height: 25px;
+  }
+
+  .deleteIcon{
+    width: 25px;
+    height: 25px;
+  }
 }

@@ -114,8 +114,8 @@ const Product = () => {
     { header: "Availability", key: "availability", Iicon: true },
   ];
 
-  const { setIsOpen } = useOutletContext();
-  
+  const { setIsOpen, setIsViewModalOpen } = useOutletContext();
+
   function handleAddProducts() {
     setIsOpen(true);
   }
@@ -130,6 +130,7 @@ const Product = () => {
         addBtnLabel="Add Product"
         onAdd={handleAddProducts}
         columns={columns}
+        setIsViewModalOpen={setIsViewModalOpen}
       />
     </div>
   );

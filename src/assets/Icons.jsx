@@ -533,11 +533,10 @@ export const CloseIcon = ({ className }) => (
   </svg>
 );
 
-export const EyeIcon = () => (
+export const EyeIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="25"
-    height="25"
+    className={className}
     viewBox="0 0 25 25"
     fill="none"
   >
@@ -545,25 +544,24 @@ export const EyeIcon = () => (
     <path
       d="M22.4418 11.5051C22.7585 11.9489 22.9168 12.1718 22.9168 12.4999C22.9168 12.8291 22.7585 13.051 22.4418 13.4947C21.0189 15.4905 17.3845 19.7916 12.5002 19.7916C7.61475 19.7916 3.98141 15.4895 2.5585 13.4947C2.24183 13.051 2.0835 12.828 2.0835 12.4999C2.0835 12.1708 2.24183 11.9489 2.5585 11.5051C3.98141 9.5093 7.61579 5.20825 12.5002 5.20825C17.3856 5.20825 21.0189 9.51034 22.4418 11.5051Z"
       stroke="#00252A"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M15.625 12.5C15.625 11.6712 15.2958 10.8763 14.7097 10.2903C14.1237 9.70424 13.3288 9.375 12.5 9.375C11.6712 9.375 10.8763 9.70424 10.2903 10.2903C9.70424 10.8763 9.375 11.6712 9.375 12.5C9.375 13.3288 9.70424 14.1237 10.2903 14.7097C10.8763 15.2958 11.6712 15.625 12.5 15.625C13.3288 15.625 14.1237 15.2958 14.7097 14.7097C15.2958 14.1237 15.625 13.3288 15.625 12.5Z"
       stroke="#00252A"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
 
-export const DeleteIcon = () => (
+export const DeleteIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="25"
-    height="25"
+    className={className}
     viewBox="0 0 25 25"
     fill="none"
   >
@@ -619,16 +617,16 @@ export const SoldIcon = () => (
       <path
         d="M13.3333 3.3335H2.66659C1.93021 3.3335 1.33325 3.93045 1.33325 4.66683V11.3335C1.33325 12.0699 1.93021 12.6668 2.66659 12.6668H13.3333C14.0696 12.6668 14.6666 12.0699 14.6666 11.3335V4.66683C14.6666 3.93045 14.0696 3.3335 13.3333 3.3335Z"
         stroke="#020617"
-        stroke-width="1.33"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.33"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1.33325 6.6665H14.6666"
         stroke="#020617"
-        stroke-width="1.33"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.33"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </g>
   </svg>
@@ -646,9 +644,9 @@ export const StockIcon = () => (
       <path
         d="M14.6666 8H11.9999L9.99992 14L5.99992 2L3.99992 8H1.33325"
         stroke="#020617"
-        stroke-width="1.33"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.33"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </g>
   </svg>
@@ -811,5 +809,106 @@ export const FileIcon = () => (
         <rect width="42" height="42" fill="white" />
       </clipPath>
     </defs>
+  </svg>
+);
+
+export const InvoiceFooterIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="10"
+    height="14"
+    viewBox="0 0 10 14"
+    fill="none"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M2 2C0.895431 2 0 2.89543 0 4V10C0 11.1046 0.89543 12 2 12H8C9.10457 12 10 11.1046 10 10V4C10 2.89543 9.10457 2 8 2H2ZM4.72221 4.95508C4.72221 4.7825 4.58145 4.64014 4.41071 4.66555C3.33092 4.82592 2.5 5.80797 2.5 6.99549V9.01758C2.5 9.19016 2.63992 9.33008 2.8125 9.33008H4.40971C4.58229 9.33008 4.72221 9.19016 4.72221 9.01758V7.6021C4.72221 7.42952 4.58229 7.2896 4.40971 7.2896H3.61115V6.95345C3.61115 6.41687 3.95035 5.96422 4.41422 5.82285C4.57924 5.77249 4.72221 5.63715 4.72221 5.4645V4.95508ZM7.5 4.95508C7.5 4.7825 7.35924 4.64014 7.18849 4.66555C6.1087 4.82592 5.27779 5.80797 5.27779 6.99549V9.01758C5.27779 9.19016 5.41771 9.33008 5.59029 9.33008H7.1875C7.36008 9.33008 7.5 9.19016 7.5 9.01758V7.6021C7.5 7.42952 7.36008 7.2896 7.1875 7.2896H6.38885V6.95345C6.38885 6.41695 6.72813 5.96422 7.19193 5.82285C7.35703 5.77249 7.5 5.63715 7.5 5.4645V4.95508Z"
+      fill="#8B919E"
+    />
+  </svg>
+);
+
+export const CrossIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <g filter="url(#filter0_d_187_5794)">
+      <path
+        d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+        fill="#00252A"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_187_5794"
+        x="-4"
+        y="0"
+        width="32"
+        height="32"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy="4" />
+        <feGaussianBlur stdDeviation="2" />
+        <feComposite in2="hardAlpha" operator="out" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_187_5794"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_187_5794"
+          result="shape"
+        />
+      </filter>
+    </defs>
+  </svg>
+);
+
+export const DownloadIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M12 15.575C11.8667 15.575 11.7417 15.5543 11.625 15.513C11.5083 15.4717 11.4 15.4007 11.3 15.3L7.7 11.7C7.5 11.5 7.404 11.2667 7.412 11C7.42 10.7333 7.516 10.5 7.7 10.3C7.9 10.1 8.13767 9.996 8.413 9.988C8.68833 9.98 8.92567 10.0757 9.125 10.275L11 12.15V5C11 4.71667 11.096 4.47934 11.288 4.288C11.48 4.09667 11.7173 4.00067 12 4C12.2827 3.99934 12.5203 4.09534 12.713 4.288C12.9057 4.48067 13.0013 4.718 13 5V12.15L14.875 10.275C15.075 10.075 15.3127 9.979 15.588 9.987C15.8633 9.995 16.1007 10.0993 16.3 10.3C16.4833 10.5 16.5793 10.7333 16.588 11C16.5967 11.2667 16.5007 11.5 16.3 11.7L12.7 15.3C12.6 15.4 12.4917 15.471 12.375 15.513C12.2583 15.555 12.1333 15.5757 12 15.575ZM6 20C5.45 20 4.97933 19.8043 4.588 19.413C4.19667 19.0217 4.00067 18.5507 4 18V16C4 15.7167 4.096 15.4793 4.288 15.288C4.48 15.0967 4.71733 15.0007 5 15C5.28267 14.9993 5.52033 15.0953 5.713 15.288C5.90567 15.4807 6.00133 15.718 6 16V18H18V16C18 15.7167 18.096 15.4793 18.288 15.288C18.48 15.0967 18.7173 15.0007 19 15C19.2827 14.9993 19.5203 15.0953 19.713 15.288C19.9057 15.4807 20.0013 15.718 20 16V18C20 18.55 19.8043 19.021 19.413 19.413C19.0217 19.805 18.5507 20.0007 18 20H6Z"
+      fill="#00252A"
+    />
+  </svg>
+);
+
+export const PrinterIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M16 8V5H8V8H6V3H18V8H16ZM18 12.5C18.2833 12.5 18.521 12.404 18.713 12.212C18.905 12.02 19.0007 11.7827 19 11.5C18.9993 11.2173 18.9033 10.98 18.712 10.788C18.5207 10.596 18.2833 10.5 18 10.5C17.7167 10.5 17.4793 10.596 17.288 10.788C17.0967 10.98 17.0007 11.2173 17 11.5C16.9993 11.7827 17.0953 12.0203 17.288 12.213C17.4807 12.4057 17.718 12.5013 18 12.5ZM16 19V15H8V19H16ZM18 21H6V17H2V11C2 10.15 2.29167 9.43767 2.875 8.863C3.45833 8.28833 4.16667 8.00067 5 8H19C19.85 8 20.5627 8.28767 21.138 8.863C21.7133 9.43833 22.0007 10.1507 22 11V17H18V21ZM20 15V11C20 10.7167 19.904 10.4793 19.712 10.288C19.52 10.0967 19.2827 10.0007 19 10H5C4.71667 10 4.47933 10.096 4.288 10.288C4.09667 10.48 4.00067 10.7173 4 11V15H6V13H18V15H20Z"
+      fill="#00252A"
+    />
   </svg>
 );

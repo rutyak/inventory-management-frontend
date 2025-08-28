@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CustomeTable.module.css";
-import { Iicon, ThreeDots } from "../../assets/Icons";
+import { Iicon, ThreeDots, EyeIcon, DeleteIcon } from "../../assets/Icons";
+import DeleteModal from "../deleteModal/DeleteModal";
 
 const CustomeTable = ({
   products,
@@ -9,8 +10,14 @@ const CustomeTable = ({
   addBtnLabel = "Add Product",
   onAdd = () => {},
   columns = [],
+  setIsViewModalOpen = () => {},
+  setInvoiceOpen = () => {},
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [menuRow, setMenuRow] = useState(null);
+  const [activeRow, setActiveRow] = useState(null);
+  const [isDeleteClick, setIsDeleteClick] = useState(false);
+  const [deleteRow, setDeleteRow] = useState(false);
 
   const totalPages = Math.ceil(products.length / rowsPerPage);
   const startIndex = (currentPage - 1) * rowsPerPage;
@@ -52,7 +59,11 @@ const CustomeTable = ({
         </thead>
         <tbody>
           {currentData.map((item, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr
+              key={rowIndex}
+              className={activeRow === rowIndex ? "active" : ""}
+              onClick={() => setActiveRow(rowIndex)}
+            >
               {columns.map((col, colIndex) => {
                 const cellContent = col.render
                   ? col.render(item)
@@ -78,13 +89,65 @@ const CustomeTable = ({
                     <div className={styles.iIconContainer}>
                       <div>{cellContent}</div>
                       {col.Iicon && (
-                        <div className={styles.iIcon}>
+                        <div
+                          className={styles.iIcon}
+                          onClick={() => setIsViewModalOpen(true)}
+                        >
                           <Iicon />
                         </div>
                       )}
                       {col.threeDot && (
-                        <div className={styles.threeDot}>
+                        <div
+                          className={styles.threeDot}
+                          onClick={() =>
+                            setMenuRow(menuRow === rowIndex ? null : rowIndex)
+                          }
+                        >
                           <ThreeDots />
+                          {menuRow === rowIndex && (
+                            <div className={styles.contextMenu}>
+                              <div
+                                className={styles.menuItem}
+                                onClick={() => setInvoiceOpen(true)}
+                              >
+                                <EyeIcon className={styles.eyeIcon} />
+                                View Invoice
+                              </div>
+                              <div
+                                className={styles.menuItem}
+                                onClick={() => {
+                                  setMenuRow(null);
+                                  setDeleteRow(rowIndex);
+                                }}
+                              >
+                                <DeleteIcon className={styles.deleteIcon} />
+                                Delete
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      {deleteRow === rowIndex && (
+                        <div className={styles.contextMenu}>
+                          <div className={styles.modal}>
+                            <p className={styles.text}>
+                              this invoice will be deleted.
+                            </p>
+                            <div className={styles.actions}>
+                              <button
+                                className={styles.cancel}
+                                onClick={() => setDeleteRow(null)}
+                              >
+                                Cancel
+                              </button>
+                              <button
+                                className={styles.confirm}
+                                onClick={() => setDeleteRow(null)}
+                              >
+                                Confirm
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
