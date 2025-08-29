@@ -6,7 +6,7 @@ import BottomNav from "../../components/bottomNav/BottomNav";
 import { SearchIcon, SettingIcon } from "../../assets/Icons";
 import { AppIcon } from "../../assets/images";
 import Settings from "../setting/Settings";
-import ProductModal from "../../components/productModal/ProductModal";
+import ProductModal from "../../components/addProductModal/ProductModal";
 import ProductView from "../../components/productViewModal/ProductView";
 import InvoiceModal from "../../components/invoiceModal/InvoiceModal";
 

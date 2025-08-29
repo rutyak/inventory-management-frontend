@@ -9,6 +9,11 @@ import Product from "./pages/product/Product.jsx";
 import Invoice from "./pages/invoice/Invoice.jsx";
 import Statistics from "./pages/statistics/Statistics.jsx";
 import Settings from "./pages/setting/Settings.jsx";
+import AddIndividualProduct from "./components/addInvidual/AddIndividualProduct.jsx";
+import { Provider } from "react-redux";
+import store, { persistor } from "./store.js";
+import { ToastContainer } from "react-toastify";
+import { PersistGate } from "redux-persist/integration/react";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +44,10 @@ const router = createBrowserRouter([
         path: "settings",
         element: <Settings />,
       },
+      {
+        path: "add/individual/product",
+        element: <AddIndividualProduct />,
+      },
     ],
   },
   {
@@ -49,6 +58,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ToastContainer />
+        <RouterProvider router={router} />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );

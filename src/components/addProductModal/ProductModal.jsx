@@ -1,10 +1,13 @@
 import { useState } from "react";
 import styles from "./ProductModal.module.css";
 import { FileIcon, NextIcon } from "../../assets/Icons";
+import { useNavigate } from "react-router-dom";
 
 const ProductModal = ({ isOpen, onClose }) => {
   const [isManualClick, setIsManualClick] = useState(false);
   const [file, setFile] = useState(null);
+
+  const navigate = useNavigate();
 
   if (!isOpen) return null;
 
@@ -22,10 +25,17 @@ const ProductModal = ({ isOpen, onClose }) => {
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modal} onClick={stopPropagation}>
-        {/* Show initial options */}
         {!isManualClick && (
           <>
-            <button className={styles.btn}>Individual product</button>
+            <button
+              className={styles.btn}
+              onClick={() => {
+                navigate("/dashboard/add/individual/product");
+                onClose();
+              }}
+            >
+              Individual product
+            </button>
             <button
               className={styles.btn}
               onClick={() => setIsManualClick(true)}
@@ -35,7 +45,6 @@ const ProductModal = ({ isOpen, onClose }) => {
           </>
         )}
 
-        {/* Show CSV Upload modal when clicked */}
         {isManualClick && (
           <>
             {/* Header */}
@@ -49,9 +58,6 @@ const ProductModal = ({ isOpen, onClose }) => {
               </button>
             </div>
 
-            {/* Subtext */}
-
-            {/* Upload Box */}
             <label className={styles.uploadBox}>
               <div className={styles.uploadIcon}>
                 <FileIcon />

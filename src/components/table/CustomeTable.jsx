@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CustomeTable.module.css";
 import { Iicon, ThreeDots, EyeIcon, DeleteIcon } from "../../assets/Icons";
-import DeleteModal from "../deleteModal/DeleteModal";
 
 const CustomeTable = ({
   products,
@@ -16,12 +15,11 @@ const CustomeTable = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [menuRow, setMenuRow] = useState(null);
   const [activeRow, setActiveRow] = useState(null);
-  const [isDeleteClick, setIsDeleteClick] = useState(false);
   const [deleteRow, setDeleteRow] = useState(false);
 
-  const totalPages = Math.ceil(products.length / rowsPerPage);
+  const totalPages = Math.ceil(products?.length / rowsPerPage);
   const startIndex = (currentPage - 1) * rowsPerPage;
-  const currentData = products.slice(startIndex, startIndex + rowsPerPage);
+  const currentData = products?.slice(startIndex, startIndex + rowsPerPage);
 
   const handlePrev = () => setCurrentPage((p) => Math.max(p - 1, 1));
   const handleNext = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
@@ -41,7 +39,7 @@ const CustomeTable = ({
       <table className={styles.table}>
         <thead>
           <tr>
-            {columns.map((col, index) => (
+            {columns?.map((col, index) => (
               <th
                 key={index}
                 className={
@@ -58,7 +56,7 @@ const CustomeTable = ({
           </tr>
         </thead>
         <tbody>
-          {currentData.map((item, rowIndex) => (
+          {currentData?.map((item, rowIndex) => (
             <tr
               key={rowIndex}
               className={activeRow === rowIndex ? "active" : ""}
