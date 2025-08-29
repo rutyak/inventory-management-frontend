@@ -27,6 +27,11 @@
   max-height: 358px;
 }
 
+.modalExpanded {
+  height: auto;
+  max-height: none;
+}
+
 .btn {
   background: #1e1e2d;
   color: white;
@@ -211,30 +216,85 @@
   width: 100%;
 }
 
+.filePreview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.fileDetails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fileIcon {
+  font-size: 24px;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.fileText {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.fileSize {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.removeBtn {
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  color: #333;
+}
+
 @media (max-width: 1024px) {
   .modalOverlay {
     left: 0;
     width: 100%;
   }
 
-  .modal{
+  .modal {
     margin: 0px 57px;
   }
-  
 
-  .uploadBox{
+  .uploadBox {
     padding: 12px;
   }
 
-  .footerContainer{
+  .footerContainer {
     justify-content: center;
   }
 
-  .btn{
+  .btn {
     height: 70px;
   }
 
-  .modal{
+  .modal {
     height: auto;
     gap: 12px;
     padding: 14px;

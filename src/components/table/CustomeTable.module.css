@@ -227,6 +227,18 @@
   background: #000;
 }
 
+.inStock {
+  color: #1a7f37;
+}
+
+.outOfStock {
+  color: #c62828;
+}
+
+.lowStock {
+  color: #e65100;
+}
+
 @media (max-width: 1300px) {
   .table th,
   .table td {

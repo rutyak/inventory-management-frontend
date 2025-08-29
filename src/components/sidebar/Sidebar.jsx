@@ -1,5 +1,5 @@
 import styles from "./Sidebar.module.css";
-import { AppIcon } from "../../assets/images";
+import AppIcon from "../../assets/images/AppIcon.svg";
 import {
   HomeIcon,
   InvoiceIcon,
@@ -14,7 +14,7 @@ const Sidebar = () => {
     <div className={styles.sidebar}>
       {/* Logo Section */}
       <div className={styles.logo}>
-        <AppIcon className={styles.appIconSize} />
+        <img src={AppIcon} alt="appIcon" className={styles.appIconSize} />
       </div>
 
       <hr style={{ border: "1px solid #424457" }} />

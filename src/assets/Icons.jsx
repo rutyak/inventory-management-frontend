@@ -703,7 +703,7 @@ export const ArrowUpIcon = () => {
         />
       </clipPath>
     </defs>
-  </svg>;
+  </svg>
 };
 
 export const NextIcon = () => (

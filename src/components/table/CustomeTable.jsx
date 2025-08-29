@@ -1,28 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./CustomeTable.module.css";
 import { Iicon, ThreeDots, EyeIcon, DeleteIcon } from "../../assets/Icons";
 
 const CustomeTable = ({
   products,
-  rowsPerPage = 10,
   title = "Products",
   addBtnLabel = "Add Product",
   onAdd = () => {},
   columns = [],
   setIsViewModalOpen = () => {},
   setInvoiceOpen = () => {},
+  currentPage = 1,
+  totalPages = 1,
+  onPageChange = () => {},
 }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [menuRow, setMenuRow] = useState(null);
-  const [activeRow, setActiveRow] = useState(null);
-  const [deleteRow, setDeleteRow] = useState(false);
-
-  const totalPages = Math.ceil(products?.length / rowsPerPage);
-  const startIndex = (currentPage - 1) * rowsPerPage;
-  const currentData = products?.slice(startIndex, startIndex + rowsPerPage);
-
-  const handlePrev = () => setCurrentPage((p) => Math.max(p - 1, 1));
-  const handleNext = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
+  const [menuRow, setMenuRow] = React.useState(null);
+  const [activeRow, setActiveRow] = React.useState(null);
+  const [deleteRow, setDeleteRow] = React.useState(false);
 
   return (
     <div className={styles.card}>
@@ -56,7 +50,7 @@ const CustomeTable = ({
           </tr>
         </thead>
         <tbody>
-          {currentData?.map((item, rowIndex) => (
+          {products?.map((item, rowIndex) => (
             <tr
               key={rowIndex}
               className={activeRow === rowIndex ? "active" : ""}
@@ -75,9 +69,9 @@ const CustomeTable = ({
                       `${col.hiddenAbove ? styles.hideOnLarge : ""} ` +
                       (col.key === "availability"
                         ? `${styles.status} ${
-                            item[col.key] === "In-stock"
+                            item[col.key] === "In Stock"
                               ? styles.inStock
-                              : item[col.key] === "Out of stock"
+                              : item[col.key] === "Out of Stock"
                               ? styles.outOfStock
                               : styles.lowStock
                           }`
@@ -160,7 +154,7 @@ const CustomeTable = ({
       {/* Pagination Footer */}
       <div className={styles.footer}>
         <button
-          onClick={handlePrev}
+          onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className={styles.paginationBtn}
         >
@@ -170,7 +164,7 @@ const CustomeTable = ({
           Page {currentPage} of {totalPages}
         </span>
         <button
-          onClick={handleNext}
+          onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           className={styles.paginationBtn}
         >

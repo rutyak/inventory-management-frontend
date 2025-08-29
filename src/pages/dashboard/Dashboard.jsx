@@ -4,7 +4,7 @@ import styles from "./Dashboard.module.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import BottomNav from "../../components/bottomNav/BottomNav";
 import { SearchIcon, SettingIcon } from "../../assets/Icons";
-import { AppIcon } from "../../assets/images";
+import AppIcon from "../../assets/images/AppIcon.svg";
 import Settings from "../setting/Settings";
 import ProductModal from "../../components/addProductModal/ProductModal";
 import ProductView from "../../components/productViewModal/ProductView";
@@ -57,7 +57,7 @@ const Dashboard = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [isInvoiceOpen, setInvoiceOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isAddProductOpen, setIsAddProductOpen] = useState(false);
 
   const location = useLocation();
 
@@ -80,7 +80,11 @@ const Dashboard = () => {
           <header className={styles.header}>
             <div className={styles.innerHeader}>
               {isMobile ? (
-                <AppIcon className={styles.appIconSize} />
+                <img
+                  src={AppIcon}
+                  alt="appIcon"
+                  className={styles.appIconSize}
+                />
               ) : (
                 <h2 className={styles.pageTitle}>Home</h2>
               )}
@@ -115,12 +119,19 @@ const Dashboard = () => {
             <Settings />
           ) : (
             <Outlet
-              context={{ setIsOpen, setIsViewModalOpen, setInvoiceOpen }}
+              context={{
+                setIsAddProductOpen,
+                setIsViewModalOpen,
+                setInvoiceOpen,
+              }}
             />
           )}
         </div>
 
-        <ProductModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <ProductModal
+          isOpen={isAddProductOpen}
+          onClose={() => setIsAddProductOpen(false)}
+        />
         <ProductView
           isOpen={isViewModalOpen}
           onClose={() => setIsViewModalOpen(false)}

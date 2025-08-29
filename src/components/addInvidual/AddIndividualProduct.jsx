@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./AddIndividualProduct.module.css";
+import { Navigate, useOutletContext } from "react-router-dom";
 
 const base_url = import.meta.env.VITE_APP_BASE_URL;
 
@@ -21,6 +22,8 @@ const AddIndividualProduct = () => {
 
   const [preview, setPreview] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const { setIsAddProductOpen } = useOutletContext();
 
   // Handle text/number input changes
   const handleChange = (e) => {
@@ -96,7 +99,15 @@ const AddIndividualProduct = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>Add Product &gt; Individual Product</div>
+      <div className={styles.header}>
+        <span
+          onClick={() => setIsAddProductOpen(true)}
+          style={{ paddingRight: "6px" }}
+        >
+          Add Product
+        </span>{" "}
+        &gt; Individual Product
+      </div>
 
       <div className={styles.card}>
         <h2 className={styles.title}>New Product</h2>
