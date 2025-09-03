@@ -1,0 +1,153 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.link {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.link:hover {
+  color: #1abc9c;
+}
+
+.main {
+  flex: 1;
+  background: #ecf0f1;
+  height: 100vh;
+  position: relative;
+}
+
+.header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-secondary);
+  position: fixed;
+  top: 0;
+  left: 220px;
+  width: calc(100% - 220px);
+  z-index: 100;
+}
+
+.innerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+}
+
+.pageTitle {
+  font-weight: 600;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px 10px;
+}
+
+.searchBox {
+  width: 291px;
+  height: 40px;
+  background: #3a3d4c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 33px;
+  padding: 8px 27px;
+  border-radius: 20px;
+  ::placeholder {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+}
+
+.searchIcon {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.iconSize {
+  width: 15px;
+  height: 15px;
+}
+
+.appIconSize {
+  width: 47px;
+  height: 47px;
+}
+
+.commonStyles {
+  padding-top: 11px;
+  margin-top: 56px;
+  background-color: var(--color-secondary);
+  height: calc(100% - 56px);
+  overflow-y: auto;
+}
+
+.divider {
+  border: 1px solid white;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0px 30px;
+    padding-top: 20px;
+    padding-bottom: 33px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-secondary);
+    z-index: 100;
+  }
+
+  .commonStyles {
+    margin-top: 109px;
+    height: calc(100% - 109px);
+    overflow-y: auto;
+  }
+
+  .settingPage {
+    padding-top: 0px;
+    margin-top: 0px;
+    background-color: var(--color-secondary);
+    height: 100vh;
+  }
+}

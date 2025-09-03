@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  width: 490px;
+  max-width: 490px;
+  height: 141px;
+  max-height: 141px;
+  position: relative; 
+  z-index: 100;
+}
+
+.text {
+  margin-bottom: 57px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel {
+  background: #f5f5f5;
+  border: none;
+  padding: 8px 20px;
+  color: #666;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.confirm {
+  background: #242531;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.cancel:hover {
+  background: #e0e0e0;
+}
+
+.confirm:hover {
+  background: #000;
+}
+
+@media (max-width: 1024px) {
+  .overlay {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text{
+    margin-bottom: 25px;
+  }
+
+  .modal {
+    width: 90%;
+    max-width: 243px;
+    height: auto;
+    max-height: 126px;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+  }
+}

@@ -1,0 +1,99 @@
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  padding: 13px;
+  height: 56px;
+}
+
+.logoIcon {
+  font-size: 28px;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 6px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 12px;
+  padding: 8px 10px;
+  color: #d1d5db;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.active {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid #3b82f6;
+  color: #fff;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.profile {
+  width: 220px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  background: #ccfff9;
+  color: #1f2233;
+  font-size: 14px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: 400;
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.iconSize {
+  width: 14px;
+  height: 14px;
+}
+
+.appIconSize {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,137 @@
+.container {
+  padding: 27px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.statContainer {
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  border-radius: 8px;
+  padding: 24px;
+  color: #111;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 150px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 12px;
+  color: #020617;
+  opacity: 0.8;
+}
+
+.icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.value {
+  margin: 10px 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.change {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+}
+
+.chartContainer {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 36px;
+}
+
+.topProduct {
+  width: 100%;
+  max-width: 316px;
+  height: 600px;
+  display: block;
+}
+
+.bigCard {
+  flex: 1;
+  background: #fff;
+  color: #111;
+  border-radius: 16px;
+  padding: 20px 28px;
+  height: 600px;
+}
+
+.chartContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.fixedCard {
+  flex: 1;
+  background: #fff;
+  color: #111;
+  border-radius: 16px;
+  padding: 20px 28px;
+  height: 600px;
+  max-width: 316px;
+}
+
+.bigCard:active {
+  cursor: grabbing;
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .fixedCard{
+    display: none;
+  }
+
+  .chartContainer{
+    padding-top: 0px;
+  }
+  .topProduct {
+    display: none;
+  }
+
+  .container {
+    padding: 0px 15px;
+    flex-direction: column-reverse;
+  }
+
+  .statContainer {
+    padding-top: 15px;
+    gap: 15px;
+    padding-bottom: 91px;
+  }
+
+  .card {
+    padding: 6px;
+    height: 92px;
+  }
+
+  .title {
+    font-size: 9px;
+    padding-bottom: 6px;
+  }
+
+  .value {
+    font-size: 20px;
+  }
+
+  .change {
+    font-size: 8px;
+  }
+}
